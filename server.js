@@ -15,23 +15,11 @@ app.get('/', (req, res) => {
     }
     if (result) {
       console.log(result);
-      res.render('index', { title: "hello world", message: `${result}` });
+      res.render('index', { title: "hello world", message: result });
     }
   })
 })
 
-app.get('/oldversion', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  pkgdb.getUsersOver(40, function (err, result) {
-    if (err) { console.log(err) }
-    if (result) {
-      console.log(result);
-      res.write('<h2>Over 40</h2>')
-      res.write(`${result}`);
-      res.end('<p>Hello world!</p>');
-    }
-  })
-})
 
 app.listen(portno, '127.0.0.1', () => {
   console.log(`Example app listening on port ${portno}`)

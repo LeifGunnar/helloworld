@@ -3,4 +3,6 @@ html
     title= title
   body
     h1= "members over 40"
-    p= message
+    each elem,i in message
+        p !{elem.name}-!{elem.age}
+    

@@ -14,7 +14,7 @@ async function getUsersOver(age, cb) {
     `
         .then((res) => {
             console.log('sql', res);
-            return cb(null, JSON.stringify(res[0]));
+            return cb(null, res);
         })
         .catch((error) => {
             console.log('sql', error);
