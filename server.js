@@ -4,8 +4,23 @@ const app = express()
 const portno = 3000
 const pkgdb = require('./db.js');
 
+app.set('view engine', 'pug');
+
 
 app.get('/', (req, res) => {
+  pkgdb.getUsersOver(40, function (err, result) {
+    if (err) {
+      console.log(err);
+      res.render('index', { title: "hello world", message: 'An error occured' });
+    }
+    if (result) {
+      console.log(result);
+      res.render('index', { title: "hello world", message: `${result}` });
+    }
+  })
+})
+
+app.get('/oldversion', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   pkgdb.getUsersOver(40, function (err, result) {
     if (err) { console.log(err) }
@@ -18,7 +33,7 @@ app.get('/', (req, res) => {
   })
 })
 
-app.listen( portno, '127.0.0.1', () => {
+app.listen(portno, '127.0.0.1', () => {
   console.log(`Example app listening on port ${portno}`)
 })
 
