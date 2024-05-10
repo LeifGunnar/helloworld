@@ -13,7 +13,7 @@ async function getUsersOver(age, cb) {
       where age > ${age}
     `
         .then((res) => {
-            console.log('sql', res);
+            //console.log('sql', res);
             return cb(null, res);
         })
         .catch((error) => {

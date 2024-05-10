@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
       res.render('index', { title: "hello world", message: 'An error occured' });
     }
     if (result) {
-      console.log(result);
+      //console.log(result);
       res.render('index', { title: "hello world", message: result });
     }
   })
