@@ -1,4 +1,4 @@
-// server.mjs
+// server.js
 const express = require('express')
 const app = express()
 const portno = 3000
@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
     }
   })
 })
+
 
 
 app.listen(portno, '127.0.0.1', () => {
