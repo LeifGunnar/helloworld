@@ -2,7 +2,18 @@ html
   head
     title= title
   body
-    h1= "members over 40"
-    each elem,i in message
+    h1= "members over " + minage
+    if errormessage
+      p= errormessage
+    else if message == {}
+      p= "ingen funnet over " + minage
+    else 
+      each elem,i in message
         p !{elem.name}-!{elem.age}
     
+    .form
+        h2 Vis ny liste
+        form(action="/membersoverage",method="POST")
+            label(for="age") Angi minimums alder
+            input(type="text" id='age' name="age")
+            button(type="submit") Submit
