@@ -16,4 +16,15 @@ html
         form(action="/membersoverage",method="POST")
             label(for="age") Angi minimums alder
             input(type="text" id='age' name="age")
-            button(type="submit") Submit
+            button(type="submit") Vis liste
+
+    .form_ny_person
+        h2 Registrer ny person
+        if nypersmeld != ""
+          p= nypersmeld
+        form(action="/nyperson",method="POST")
+            label(for="name") Angi navn
+            input(type="text" id='name' name="name")
+            label(for="age") Angi alder
+            input(type="text" id='age' name="age")
+            button(type="submit") Registrer ny

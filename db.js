@@ -11,6 +11,7 @@ async function getUsersOver(age, cb) {
         age
       from users
       where age > ${age}
+      order by age
     `
     .then((res) => {
       //console.log('sql', res);
@@ -25,7 +26,7 @@ async function getUsersOver(age, cb) {
 }
 
 
-async function insertUser({ name, age }, cb) {
+async function insertUser({name, age} , cb) {
   await sql`
       insert into users
         (name, age)
