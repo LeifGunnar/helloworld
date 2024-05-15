@@ -24,7 +24,7 @@ CREATE UNIQUE INDEX users_name_idx
     ON public.users  ( name );
     
 
-Environmentvariabler
+Environmentvariabler plasseres i env.sh
 export PGHOST=localhost
 export PGPORT=5432
 export PGDATABASE=helloworld
