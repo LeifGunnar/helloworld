@@ -30,3 +30,11 @@ export PGPORT=5432
 export PGDATABASE=helloworld
 export PGUSER=helloworldowner
 export PGPASSWORD=supersecretpassword
+
+
+# oppdatere til ny versjon
+npm install -g npm-check-update
+# sjekk og oppdater package.json
+ncu
+# oppdater pakker
+ncu -u
